@@ -27,9 +27,9 @@ days = ["none", "monday", "tuesday", "wednesday", "thursday", "friday",
 # through the creation of a Key based on a specific city and then inserting the
 # directory of the appropriate csv file
 cities_data = {
-              "chicago" : "../bikeshare-data/chicago.csv",
-              "new york city" : "../bikeshare-data/new_york_city.csv",
-              "washington" : "../bikeshare-data/washington.csv"
+              "chicago" : "./bikeshare-data/chicago.csv",
+              "new york city" : "./bikeshare-data/new_york_city.csv",
+              "washington" : "./bikeshare-data/washington.csv"
 }
 
 # stats_info is the Dictionary which will be used by the stats_calculator(),
