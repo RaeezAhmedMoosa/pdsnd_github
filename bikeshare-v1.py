@@ -214,7 +214,6 @@ def data_filter(city, df, month="none", day="none"):
     month - string. Month to be used to filter the data (optional).
     day - string. Day to be used to filter the data (optional).
     '''
-    print("\ndata_filter() currently operating...\n")
     if month != "none" and day == "none":
         print("Filtering by month:", month.title())
         df = df[df["Month"] == month.title()]
@@ -363,7 +362,7 @@ def dict_userinfo_looper(city, df, key, value):
                 print(value[n], data)
                 print("\n")
             # 0 == "Gender Count"
-            elif n == 1 and city.lower() != "washington":
+            elif n == 1 and city != "washington":
                 df = df.copy()
                 df["Gender"].fillna("Not Specified", inplace=True)
                 # This code follows the same logic and process as the count made for
@@ -382,7 +381,7 @@ def dict_birthstats_looper(city, df, key, value):
     # 5th Key in the stat_info Dictionary
     if key == "birth info":
         for n in range(len(stats_info[key])):
-            if n == 0 and city.lower() != "washington":
+            if n == 0 and city != "washington":
                 data = df["Birth Year"].min()
                 # I see no reason for "Birth Year" to be a float type, so this
                 # line converts "Birth Year" into an integer type
@@ -395,14 +394,14 @@ def dict_birthstats_looper(city, df, key, value):
                 # modal age later on in the code
                 print("Possible age in 2017:", 2017 - data_int)
                 print("\n")
-            elif n == 1 and city.lower() != "washington":
+            elif n == 1 and city != "washington":
                 data = df["Birth Year"].max()
                 data_int = int(data)
                 print_pause(4)
                 print("{}: {}".format(value[n], data_int))
                 print("Possible age in 2017:", 2017 - data_int)
                 print("\n")
-            elif n == 2 and city.lower() != "washington":
+            elif n == 2 and city != "washington":
                 data = df[value[n]].mode()[0]
                 data_int = int(data)
                 count = df[value[n]].value_counts().iloc[0]
