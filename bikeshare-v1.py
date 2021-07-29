@@ -214,7 +214,6 @@ def data_filter(city, df, month="none", day="none"):
     month - string. Month to be used to filter the data (optional).
     day - string. Day to be used to filter the data (optional).
     '''
-    print("\ndata_filter() currently operating...\n")
     if month != "none" and day == "none":
         print("Filtering by month:", month.title())
         df = df[df["Month"] == month.title()]
