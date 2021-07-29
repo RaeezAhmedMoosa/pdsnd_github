@@ -362,7 +362,7 @@ def dict_userinfo_looper(city, df, key, value):
                 print(value[n], data)
                 print("\n")
             # 0 == "Gender Count"
-            elif n == 1 and city.lower() != "washington":
+            elif n == 1 and city != "washington":
                 df = df.copy()
                 df["Gender"].fillna("Not Specified", inplace=True)
                 # This code follows the same logic and process as the count made for
