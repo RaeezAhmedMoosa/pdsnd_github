@@ -381,7 +381,7 @@ def dict_birthstats_looper(city, df, key, value):
     # 5th Key in the stat_info Dictionary
     if key == "birth info":
         for n in range(len(stats_info[key])):
-            if n == 0 and city.lower() != "washington":
+            if n == 0 and city != "washington":
                 data = df["Birth Year"].min()
                 # I see no reason for "Birth Year" to be a float type, so this
                 # line converts "Birth Year" into an integer type
@@ -394,14 +394,14 @@ def dict_birthstats_looper(city, df, key, value):
                 # modal age later on in the code
                 print("Possible age in 2017:", 2017 - data_int)
                 print("\n")
-            elif n == 1 and city.lower() != "washington":
+            elif n == 1 and city != "washington":
                 data = df["Birth Year"].max()
                 data_int = int(data)
                 print_pause(4)
                 print("{}: {}".format(value[n], data_int))
                 print("Possible age in 2017:", 2017 - data_int)
                 print("\n")
-            elif n == 2 and city.lower() != "washington":
+            elif n == 2 and city != "washington":
                 data = df[value[n]].mode()[0]
                 data_int = int(data)
                 count = df[value[n]].value_counts().iloc[0]
